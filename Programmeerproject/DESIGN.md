@@ -1,0 +1,80 @@
+Data source: [Stats EMCDDA](http://www.emcdda.europa.eu/data/stats2016)<br>
+  - [population size](http://appsso.eurostat.ec.europa.eu/nui/submitViewTableAction.do)
+
+### Data structure
+- Prevalance
+  - cannabis / cocaine / amphetamines / ecstasy
+    - lifetime / last year / last month
+      - all / young
+        - country
+          - year
+            - total percentage (one decimal)
+- Treatment demand
+  - cannabis / cocaine / amphetamines / ecstasy (MDMA)
+    - country
+      - year
+        - clients n
+- Seizures of drugs
+  - herbal cannabis / cocaine / amphetamine / ecstasy
+    - country
+      - year
+        - total seizures n
+- Purity and potency
+  - cannabis / cocaine / amphetamines / ecstasy
+    - country
+      - year
+        - percentage (one to two decimals according to data)
+- Overdose deaths
+  - total / mean age
+    - country
+      - year
+        - amount for total, one decimal value for mean age
+- Infectious diseases
+  - HIV / AIDS
+    - country
+      - year
+        - total notifications n
+- health and social responses
+  - OST / NSP
+    - country
+      - year
+        - clients n
+- population size
+  - country
+    - year
+      - size n
+        
+ ### Visualisation design
+ 
+ Maps of Europe
+  - with no drug selected
+    - time slide
+      - map coloring by selecting overdose deaths / infectious disease / HSR
+      - overdose deaths
+        - total overdose deaths: n (corrected for population size), mean age: n
+      - infectious disease notifications (corrected for population size)
+        - HIV: n, AIDS: n
+      - health and social responses (corrected for population size)
+        - OST clients: n, NSP clients: n
+    - topic selectable for comparisson to other countries in bar chart
+      - current country in different color
+    - country clickable for trend in line graph
+      - current year in different color
+  - with drug selected
+    - time slide
+      - map coloring by selecting prevalence / treatment demand / seizures of drugs / purity/potency
+      - prevalence
+        - bar chart with lifetime, overlap year, overlap month for both all and young
+          - total percentage
+      - treatment demand (corrected for population size)
+        - clients n
+      - seizures of drugs (corrected for population size)
+        - total seizures n
+      - purity / potency
+        - for cocaine and amphetamines: purity: %
+        - for mdma: potency: mg
+        - for herbal cannabis: % THC
+    - topic selectable for comparisson to other countries in bar chart
+      - current country in different color
+    - country clickable for trend in line graph
+      - current year in different color
